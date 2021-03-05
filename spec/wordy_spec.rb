@@ -50,4 +50,14 @@ end
       expect(Word.find(word1.id)).to(eq(word1))
     end
   end
+
+  describe('#update_word') do
+    it("should update a word") do
+      word1 = Word.new("Hello", "Used as a greeting.", nil)
+      word1.save
+      word1.update_word("Goodbye")
+      expect(word1.word).to(eq("Goodbye"))
+    end
+  end
+
 end
