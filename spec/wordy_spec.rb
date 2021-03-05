@@ -59,5 +59,13 @@ end
       expect(word1.word).to(eq("Goodbye"))
     end
   end
+  describe('#update_def') do
+    it("should update a word's definition") do
+      word1 = Word.new("Hello", "Used as a greeting.", nil)
+      word1.save
+      word1.update_def("Used to express good wishes when parting.")
+      expect(word1.definition).to(eq("Used to express good wishes when parting."))
+    end
+  end
 
 end

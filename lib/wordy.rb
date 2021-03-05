@@ -36,4 +36,7 @@ class Word
     @word = new_word
   end
 
+  def update_def(new_def)
+    @definition = new_def
+  end
 end
