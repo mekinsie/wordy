@@ -4,9 +4,9 @@ require 'pry'
 
 describe '#Word' do
 
-# before(:each) do
-#   Word.clear()
-# end
+before(:each) do
+  Word.clear()
+end
 
   describe('.all') do
     it("should return an empty array when there are no words") do
@@ -40,6 +40,14 @@ describe '#Word' do
       word2.save
       Word.clear
       expect(Word.all).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it('should find a word based on its id') do
+      word1 = Word.new("Hello", "Used as a greeting.", nil)
+      word1.save
+      expect(Word.find(word1.id)).to(eq(word1))
     end
   end
 end
