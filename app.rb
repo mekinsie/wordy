@@ -14,8 +14,13 @@ get('/new') do
 end
 
 post('/') do
-  word1 = Word.new(params(:new_word), params(:definition), nil)
+  word1 = Word.new(params[:new_word], params[:definition], nil)
   word1.save
   @word_list = Word.all
   erb(:home)
+end
+
+get('/:id') do
+  @word = Word.find(params[:id].to_i)
+  erb(:word)
 end
