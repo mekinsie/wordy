@@ -68,4 +68,16 @@ end
     end
   end
 
+  describe("#delete") do
+    it("should delete a word") do
+    word1 = Word.new("Hello", "Used as a greeting.", nil)
+    word1.save
+    word2 = Word.new("Goodbye", "Used to express good wishes when parting.", nil)
+    word2.save
+    word1.delete
+    expect(Word.all).to(eq([word2]))
+    end
+  end
+  
+
 end

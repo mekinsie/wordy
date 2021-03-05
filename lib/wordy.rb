@@ -39,4 +39,8 @@ class Word
   def update_def(new_def)
     @definition = new_def
   end
+  
+  def delete
+  end
+
 end
