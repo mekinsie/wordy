@@ -22,5 +22,9 @@ class Word
   def ==(word_compare)
     self.word() == word_compare.word()
   end
-  
+
+  def self.clear
+    @@words = {}
+  end
+
 end

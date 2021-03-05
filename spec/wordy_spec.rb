@@ -4,6 +4,10 @@ require 'pry'
 
 describe '#Word' do
 
+# before(:each) do
+#   Word.clear()
+# end
+
   describe('.all') do
     it("should return an empty array when there are no words") do
       expect(Word.all).to(eq([]))
@@ -28,4 +32,14 @@ describe '#Word' do
     end
   end
 
+  describe('.clear') do
+    it("clears all words from the database") do
+      word1 = Word.new("Hello", "Used as a greeting.", nil)
+      word1.save
+      word2 = Word.new("Goodbye", "Used to express good wishes when parting.", nil)
+      word2.save
+      Word.clear
+      expect(Word.all).to(eq([]))
+    end
+  end
 end
