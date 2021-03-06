@@ -1,5 +1,6 @@
 require 'rspec'
 require 'wordy'
+require 'definition'
 require 'pry'
 
 describe '#Word' do
@@ -72,14 +73,16 @@ end
     end
   end
   
-  # describe(".find_by_word") do
-  #   it("should find a word by its word") do
-  #   word1 = Word.new("Hello", nil)
-  #   word1.save
-  #   word2 = Word.new("Goodbye", nil)
-  #   word2.save
-  #   expect(Word.find_by_word("Hello")).to(eq(1))
-  #   end
-  # end
-
+  describe('#definitions') do
+    it("returns a word's definitions") do
+      Definition.clear
+      word1 = Word.new("Hello", nil)
+      word1.save
+      def1 = Definition.new("A greeting", word1.id, nil)
+      def1.save
+      def2 = Definition.new("Said at first meet", word1.id, nil)
+      def2.save
+      expect(word1.definitions).to(eq([def1, def2]))
+    end
+  end
 end

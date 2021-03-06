@@ -1,4 +1,5 @@
 require 'pry'
+require 'definition'
 
 class Word
   attr_reader :word, :id
@@ -38,6 +39,10 @@ class Word
 
   def delete
     @@words.delete(self.id)
+  end
+
+  def definitions
+    Definition.find_by_word(self.id)
   end
 
 end
