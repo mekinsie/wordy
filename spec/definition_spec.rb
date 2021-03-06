@@ -82,4 +82,14 @@ end
     end
   end
 
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      def1 = Definition.new("A greeting", @word1.id, nil)
+      def1.save
+      def2 = Definition.new("A farewell", @word2.id, nil)
+      def2.save
+      expect(Definition.find_by_word(@word2.id)).to(eq([def2]))
+    end
+  end
+
 end

@@ -38,13 +38,14 @@ class Definition
     @@definitions.delete(self.id)
   end
 
-  # def update_word(new_word)
-  #   @word = new_word
-  # end
-
-  # def update_def(new_def)
-  #   @definition = new_def
-  # end
-  
+  def self.find_by_word(wordy_id)
+    definitions = []
+    @@definitions.values.each do |def_obj|
+      if def_obj.word_id == wordy_id
+        definitions.push(def_obj)
+      end
+    end
+    definitions
+  end
 
 end
