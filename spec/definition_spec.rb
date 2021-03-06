@@ -6,6 +6,7 @@ require 'pry'
 describe '#Definition' do
 before(:each) do
   Word.clear()
+  Definition.clear()
   @word1 = Word.new("Hello", nil)
   @word1.save
   @word2 = Word.new("Goodbye", nil)
@@ -67,8 +68,18 @@ end
     def1.save
     def1.update_def("A farewell")
     expect(def1.definition).to(eq("A farewell"))
+    end
   end
-end
 
+  describe("#delete") do
+    it("should delete a definition by its id") do
+      def1 = Definition.new("A greeting", @word1.id, nil)
+      def1.save
+      def2 = Definition.new("A farewell", @word2.id, nil)
+      def2.save
+      def1.delete
+      expect(Definition.all).to(eq([def2]))
+    end
+  end
 
 end

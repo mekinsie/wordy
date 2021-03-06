@@ -34,6 +34,9 @@ class Definition
     @definition = new_def
   end
   
+  def delete
+    @@definitions.delete(self.id)
+  end
 
   # def update_word(new_word)
   #   @word = new_word
@@ -43,8 +46,5 @@ class Definition
   #   @definition = new_def
   # end
   
-  # def delete
-  #   @@words.delete(self.id)
-  # end
 
 end
