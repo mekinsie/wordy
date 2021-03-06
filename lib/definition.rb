@@ -20,20 +20,22 @@ class Definition
   def ==(def_compare)
     self.definition() == def_compare.definition()
   end
-
-  # def update_def(new_def)
-  #   @definition = new_def
-  # end
   
+  def self.find(id)
+    @@definitions[id]
+  end
 
   def self.clear
     @@definitions = {}
     @@total_rows = 0
   end
 
-  # def self.find(id)
-  #   @@words[id]
+  # def update_def(new_def)
+  #   @definition = new_def
   # end
+  
+
+
 
   # def update_word(new_word)
   #   @word = new_word
