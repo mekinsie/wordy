@@ -1,7 +1,17 @@
 
-<h2>Word:</h2>
-<h4><%= @word.word %></h4>
-<h2>Definition:</h2>
-<h4><%= @word.definition %></h4>
+<h1><%= @word.word %></h1>
+<h3>Definition:</h3>
 
-<a href="/" class="btn">Back</a>
+<ol>
+<% @word.definitions.each do |def_obj| %>
+  <li><%= def_obj.definition%></li>
+  <% end %>
+</ol>
+
+</h4>
+
+<a href="/add_definition/<%= @word.id %>" class="btn">Add a another definition</a><br><br>
+
+
+<a href="/" class="btn">Back</a><br><br>
+

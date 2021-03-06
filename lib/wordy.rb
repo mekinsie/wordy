@@ -1,5 +1,4 @@
 require 'pry'
-require 'definition'
 
 class Word
   attr_reader :word, :id
