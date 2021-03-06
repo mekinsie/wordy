@@ -15,7 +15,6 @@ get('/new') do
 end
 
 post('/') do
-  binding.pry
   word1 = Word.new(params[:new_word], nil)
   word1.save
   def1 = Definition.new(params[:definition], word1.id, nil)
@@ -26,6 +25,7 @@ end
 
 get('/:id') do
   @word = Word.find(params[:id].to_i)
+  # @def = @word.definitions
   erb(:word)
 end
 
@@ -34,10 +34,15 @@ get('/add_definition/:id') do
   erb(:new_definition)
 end
 
-post('/definitions') do
-  @word = Word.find(params[:id].to_i)
-  def_new = Definition.new(params[:new_def], @word.id, nil)
-  def_new.save
+# post('/definitions') do
+#   erb(:definitions)
+# end
+
+post('/:id') do
+  @word = Word.find(params[:word_id].to_i)
+  @word_id = (params[:word_id].to_i)
+  @def_new = Definition.new(params[:new_def], @word_id, nil)
+  @def_new.save
   @def_list = Definition.all
-  erb(:definitions)
+  erb(:word)
 end
