@@ -30,12 +30,10 @@ class Definition
     @@total_rows = 0
   end
 
-  # def update_def(new_def)
-  #   @definition = new_def
-  # end
+  def update_def(new_def)
+    @definition = new_def
+  end
   
-
-
 
   # def update_word(new_word)
   #   @word = new_word
