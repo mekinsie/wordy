@@ -12,18 +12,18 @@ class Definition
   def self.all
     @@definitions.values
   end
-
+  
   def save
     @@definitions[self.id] = Definition.new(self.definition, self.word_id, self.id)
   end
-
+  
+  def ==(def_compare)
+    self.definition() == def_compare.definition()
+  end
   # def update_def(new_def)
   #   @definition = new_def
   # end
   
-  # def ==(word_compare)
-  #   self.word() == word_compare.word()
-  # end
 
   # def self.clear
   #   @@words = {}
