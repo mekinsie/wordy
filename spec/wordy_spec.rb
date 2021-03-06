@@ -60,6 +60,7 @@ end
     end
   end
 
+
   describe("#delete") do
     it("should delete a word by its id") do
     word1 = Word.new("Hello", nil)
