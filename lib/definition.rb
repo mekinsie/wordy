@@ -20,6 +20,7 @@ class Definition
   def ==(def_compare)
     self.definition() == def_compare.definition()
   end
+  
   # def update_def(new_def)
   #   @definition = new_def
   # end
