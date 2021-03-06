@@ -92,4 +92,12 @@ end
     end
   end
 
+  describe('#word') do
+    it("finds the word a definition belongs to") do
+      def1 = Definition.new("A greeting", @word1.id, nil)
+      def1.save
+      expect(def1.word).to(eq(@word1))
+    end
+  end
+
 end
