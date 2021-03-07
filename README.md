@@ -44,7 +44,7 @@ $ code .
 
 **If you are using Docker, skip steps 4 & 5.**
 
-4. Install gem bundler by typing:
+4. While located in the root directy, install gem bundler by typing:
 
 ``` bash
 $ gem install bundler
