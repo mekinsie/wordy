@@ -19,9 +19,17 @@ end
 describe('navigate to a word path', {:type => :feature}) do
   it('navigates to the word page with its definitions') do
     visit('/')
-    save_and_open_page
     click_on('Hello')
     expect(page).to have_content('Hello')
     expect(page).to have_content('A greeting')
+  end
+end
+
+describe('delete a word path', {:type => :feature}) do
+  it('deletes a word from the home page') do
+    visit('/')
+    click_on('Delete a word')
+    click_on('Hello')
+    expect(page).to have_content('There are currently no words to display')
   end
 end
