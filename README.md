@@ -2,7 +2,7 @@
 #### **Author: Mekinsie Callahan**
 * * *
 ## Description
- The purpose of this application is to help making learning fun: children can write up a list of words they don't know (but would like to learn) and the come up with their own definitions. 
+ The purpose of this application is to help make learning fun: children can write up a list of words they don't know (but would like to learn) and the come up with their own definitions. 
 
 Interact with the application directly:
 https://blooming-basin-27826.herokuapp.com/
@@ -11,7 +11,6 @@ https://blooming-basin-27826.herokuapp.com/
 ## Technologies used
 
 * HTML
-* CSS
 * Bootstrap
 * git
 * Ruby
