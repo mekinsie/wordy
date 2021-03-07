@@ -2,8 +2,8 @@
 <h3>Definition:</h3>
 
 <ol>
-<% @word.definitions.each do |def_obj| %>
-  <li><%= def_obj.definition%></li>
+  <% @word.definitions.each do |def_obj| %>
+    <li><%= def_obj.definition%></li>
   <% end %>
 </ol><br>
 
@@ -11,6 +11,3 @@
 <a href="/edit_def/<%= @word.id %>" class="btn">Edit a definition</a><br>
 <a href="/delete_def/<%= @word.id %>" class="btn">Delete a definition</a><br><br>
 <a href="/" class="btn">Back</a><br><br>
-
- 
-

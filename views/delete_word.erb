@@ -4,7 +4,7 @@
   <% @words.each do |word_obj| %>
     <form action="/" method="post">
       <input type="hidden" name="_method" value="delete">
-      <input type="hidden" name="deleted_word" value="<%= word_obj%>">
+      <input type="hidden" name="deleted_word_id" value="<%= word_obj.id %>">
       <li><button type="submit"> <%= word_obj.word%> </button></li>
     </form>
   <% end %>

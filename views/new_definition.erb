@@ -1,10 +1,10 @@
 <form action="/<%= @word.id %>" method="post">
-<div class="form-group">
+  <div class="form-group">
     <label for="new_def">Definition:</label>
     <input type="hidden" name="word_id" id="word_id" value="<%= @word.id %>">
     <input type ="text" name="new_def" id="new_def" placeholder="definition" required>
     <button type="submit" class="btn">Create!</button>
-  </form>
-</div>
+  </div>
+</form>
 
 <a href="/<%= @word.id %>" class="btn">Back</a><br>

@@ -10,6 +10,10 @@ get('/') do
   erb(:home)
 end  
 
+get('/new') do
+  erb(:new_word_form)
+end  
+
 post('/') do
   word1 = Word.new(params[:new_word], nil)
   word1.save
@@ -19,21 +23,33 @@ post('/') do
   erb(:home)
 end  
 
-
 get('/edit_word') do
   @words = Word.all
   erb(:edit_word)
 end
 
-get('/new') do
-  erb(:new_word_form)
-end  
+patch('/') do
+  @word_list = Word.all
+  word = Word.find(params[:edited_word_id].to_i)
+  word.update_word(params[:new_word])
+  erb(:home)
+end
 
+get('/delete_word') do 
+  @words = Word.all
+  erb(:delete_word)
+end
 
-get('/:id') do
+delete('/') do
+  @word = Word.find(params[:deleted_word_id].to_i)
+  @word.delete
+  @word_list = Word.all
+  erb(:home)
+end
+
+get('/add_def/:id') do
   @word = Word.find(params[:id].to_i)
-  # @def = @word.definitions
-  erb(:word)
+  erb(:new_definition)
 end  
 
 post('/:id') do
@@ -44,34 +60,9 @@ post('/:id') do
   erb(:word)
 end  
 
-get('/add_def/:id') do
-  @word = Word.find(params[:id].to_i)
-  erb(:new_definition)
-end  
-
-
-get('/delete_def/:id') do 
-  @word = Word.find(params[:id].to_i)
-  erb(:delete_def)
-end  
-
-delete('/:id')do
-  @word = Word.find(params[:id].to_i)
-  deleted_def = Definition.find(params[:deleted_def].to_i)
-  deleted_def.delete
-  erb(:word)
-end  
-
 get('/edit_def/:id') do 
   @word = Word.find(params[:id].to_i)
-erb(:edit_def)  
-end
-
-patch('/') do
-  @word_list = Word.all
-  word = Word.find(params[:edited_word_id].to_i)
-  word.update_word(params[:new_word])
-  erb(:home)
+  erb(:edit_def)  
 end
 
 patch('/:id') do
@@ -81,14 +72,19 @@ patch('/:id') do
   erb(:word)
 end
 
-get('/deleted_word') do 
-  binding.pry
-  @words = Word.all
-  erb(:delete_word)
+get('/delete_def/:id') do 
+  @word = Word.find(params[:id].to_i)
+  erb(:delete_def)
+end 
+
+delete('/:id')do
+@word = Word.find(params[:id].to_i)
+deleted_def = Definition.find(params[:deleted_def].to_i)
+deleted_def.delete
+erb(:word)
 end  
 
-delete('/') do
-  @word_list = Word.all
-  params[:delete_word].delete
-  erb(:home)
-end
+get('/:id') do
+  @word = Word.find(params[:id].to_i)
+  erb(:word)
+end  
