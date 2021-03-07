@@ -35,17 +35,28 @@ describe('delete a word path', {:type => :feature}) do
 end
 
 describe('edit a word path', {:type => :feature}) do
-  it('deletes a word from the home page') do
+  it('edits a word') do
     visit('/')
     click_on('Add a new word')
     fill_in('new_word', :with => 'Hello')
     fill_in('definition', :with => 'A greeting')
     click_on('Create!')
     click_on("Edit a word")
-    save_and_open_page
     choose("Hello")
     fill_in("new_word", :with => "Hola")
     click_on('Update!')
     expect(page).to have_content('Hola')
+  end
+end
+
+describe('add a definition path', {:type => :feature}) do
+  it('adds a definition to an existing word') do
+    visit('/')
+    click_on('Hola')
+    click_on('Add a definition')
+    fill_in('new_def', :with => "Hello in Spanish")
+    click_on("Create!")
+    expect(page).to have_content('A greeting')
+    expect(page).to have_content('Hello in Spanish')
   end
 end
