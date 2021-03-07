@@ -5,7 +5,7 @@
   <% if @words.any? %>
     <% @words.each do |word| %>
       <label for="edited_word_id"><%= word.word %></label>
-      <input type="radio" name="edited_word_id" value="<%= word.id %>"><br>
+      <input type="radio" name="edited_word_id" id="<%= word.word %>" value="<%= word.id %>"><br>
     <% end %>
   <% else %>
     <p>There are currently no words to edit.</p>

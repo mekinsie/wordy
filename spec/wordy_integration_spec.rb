@@ -33,3 +33,19 @@ describe('delete a word path', {:type => :feature}) do
     expect(page).to have_content('There are currently no words to display')
   end
 end
+
+describe('edit a word path', {:type => :feature}) do
+  it('deletes a word from the home page') do
+    visit('/')
+    click_on('Add a new word')
+    fill_in('new_word', :with => 'Hello')
+    fill_in('definition', :with => 'A greeting')
+    click_on('Create!')
+    click_on("Edit a word")
+    save_and_open_page
+    choose("Hello")
+    fill_in("new_word", :with => "Hola")
+    click_on('Update!')
+    expect(page).to have_content('Hola')
+  end
+end
