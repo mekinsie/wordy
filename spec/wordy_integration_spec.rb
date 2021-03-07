@@ -71,3 +71,13 @@ describe('edit a definition path', {:type => :feature}) do
     expect(page).to have_content('Hello in Spanish')
   end
 end
+
+describe('delete a definition path', {:type => :feature}) do
+  it('deletes an existing definition') do
+    visit('/2')
+    click_on('Delete a definition')
+    click_on("Hello in Spanish")
+    expect(page).not_to have_content('Hello in Spanish')
+    expect(page).to have_content('A better greeting than Hello')
+  end
+end
