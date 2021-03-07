@@ -1,29 +1,37 @@
 # Wordy
-#### Author: Mekinsie Callahan
-
+#### **Author: Mekinsie Callahan**
+* * *
 ## Description
-This project allows users to input three words and provide their own definitions for them. 
+ The purpose of this application is to help making learning fun: children can write up a list of words they don't know (but would like to learn) and the come up with their own definitions. 
 
+Interact with the application directly:
+https://blooming-basin-27826.herokuapp.com/
 * * *
 
 ## Technologies used
 
+* HTML
+* CSS
+* Bootstrap
+* git
 * Ruby
-* Rspec
+* Embedded Ruby (ERB)
+* RSpec
 * Sinatra
 * Capybara
 * Bundler
+* Heroku
+* Bundler
 
 * * *
-**HEROKU**
-
-## Installation :
 ## Installation & Requirements
 **Ruby or Docker is required to run this application**
 
+ <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby">Ruby download instructions</a>  
+ <a href="https://www.learnhowtoprogram.com/ruby-and-rails/docker-with-ruby/installing-docker">Docker download instructions</a>  
 1. Navigate to the desired directory where you would like to clone the project to.
 
-2. Once you have chosen your desired directory, clone the github repo into it by typing the following command into your terminal:
+2. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Typing the following command into your terminal:
 ```bash
 $ git clone https://github.com/mekinsie/wordy
 ```
@@ -32,6 +40,8 @@ $ git clone https://github.com/mekinsie/wordy
 ``` bash
 $ code .
 ```
+* Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a>  
+
 **If you are using Docker, skip steps 4 & 5.**
 
 4. Install gem bundler by typing:
@@ -47,6 +57,8 @@ $ bundle
 ```
 
 ## Running Tests
+* This application was created using test-driven development (TDD).
+* To run the tests yourself, follow the steps below. 
 
 **Run tests using Ruby (no Docker):**
 If you have Ruby already installed, simply type "rspec" into your terminal while located in the root directory of the project.
@@ -71,29 +83,14 @@ dspec ()
 
 With this alias, the `dspec` command will automatically run RSpec tests. If you prefer not to use an alias, simply type each of the aforementioned commands into your terminal.
 
-
-<!-- ## Running scripts
-
-**Run scripts in your terminal (must have Ruby already installed):**
-
-* While located in the root directory of the project, type the following in your terminal to run the script:
-
-```bash
-$ ruby lib/script.rb
-```
-
-**Run scripts in Docker**
-* Run the following command: `docker-compose run --rm app ruby lib/script.rb`.
-We recommend aliasing this command if you plan to run scripts often. -->
-
-* * *
-
-## Contact Information
-
-_Mekinsie Callahan: [Email](mekinsie.aja@gmail.com)_
 * * *
 
 ## License
 > [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
 > Mekinsie Callahan &copy; 2021
+
 * * *
+
+## Contact Information
+
+Reach me via <a href="https://www.linkedin.com/in/mekinsie/" target="_blank">Linkedin</a> or <a href="mailto:mekinsie.aja@gmail.com" target="_blank">email</a></li>.
