@@ -80,7 +80,7 @@ dspec ()
   docker-compose run --rm app
 }
 ```
-
+<a href="https://www.learnhowtoprogram.com/ruby-and-rails/docker-with-ruby/using-aliases">Instructions on how to create an Alias</a>  
 With this alias, the `dspec` command will automatically run RSpec tests. If you prefer not to use an alias, simply type each of the aforementioned commands into your terminal.
 
 * * *
