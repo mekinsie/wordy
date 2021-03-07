@@ -4,8 +4,8 @@
   <input type="hidden" name="_method" value="patch">
   <ol>
     <% @word.definitions.each do |def_obj| %>
-      <label for="edit_def_id"><%= def_obj.definition%></label>
-      <input type="radio" name="edit_def_id" value="<%= def_obj.id %>"><br>
+      <label for="edited_def_id"><%= def_obj.definition%></label>
+      <input type="radio" name="edited_def_id" value="<%= def_obj.id %>"><br>
     <% end %>
   </ol>
   <input type="text" name="new_def" placeholder="new definition" required>

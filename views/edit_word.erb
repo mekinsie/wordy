@@ -2,14 +2,16 @@
 
 <form action="/" method="post">
   <input type="hidden" name="_method" value="patch">
-  <ol>
+  <% if @words.any? %>
     <% @words.each do |word| %>
-      <label for="edit_def_id"><%= word.word %></label>
+      <label for="edited_word_id"><%= word.word %></label>
       <input type="radio" name="edited_word_id" value="<%= word.id %>"><br>
     <% end %>
-  </ol>
+  <% else %>
+    <p>There are currently no words to edit.</p>
+  <% end %><br>
   <input type="text" name="new_word" placeholder="new word" required>
   <button type="submit" class="btn">Update!</button>
 </form><br>
 
-<a href="/" class="btn">Home</a><br><br>
+<a href="/" class="btn">Back</a><br><br>

@@ -74,7 +74,21 @@ patch('/') do
   erb(:home)
 end
 
+patch('/:id') do
+  @word = Word.find(params[:id].to_i)
+  @def = Definition.find(params[:edited_def_id].to_i)
+  @def.update_def(params[:new_def])
+  erb(:word)
+end
 
-# edit_def = @word.definitions
-# Definition.find(params[:edit_def_id].to_i)
-# edit_def.update_def(params[:new_def])
+get('/deleted_word') do 
+  binding.pry
+  @words = Word.all
+  erb(:delete_word)
+end  
+
+delete('/') do
+  @word_list = Word.all
+  params[:delete_word].delete
+  erb(:home)
+end
