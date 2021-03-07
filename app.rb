@@ -67,10 +67,11 @@ get('/edit_def/:id') do
 erb(:edit_def)  
 end
 
-patch('/:id') do
-  @word = Word.find(params[:edited_word_id].to_i)
-  @word.update_word(params[:new_word])
-  erb(:word)
+patch('/') do
+  @word_list = Word.all
+  word = Word.find(params[:edited_word_id].to_i)
+  word.update_word(params[:new_word])
+  erb(:home)
 end
 
 
