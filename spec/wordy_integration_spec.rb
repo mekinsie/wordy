@@ -51,12 +51,23 @@ end
 
 describe('add a definition path', {:type => :feature}) do
   it('adds a definition to an existing word') do
-    visit('/')
-    click_on('Hola')
+    visit('/2')
     click_on('Add a definition')
     fill_in('new_def', :with => "Hello in Spanish")
     click_on("Create!")
     expect(page).to have_content('A greeting')
+    expect(page).to have_content('Hello in Spanish')
+  end
+end
+
+describe('edit a definition path', {:type => :feature}) do
+  it('edits an existing definition') do
+    visit('/2')
+    click_on('Edit a definition')
+    choose("A greeting")
+    fill_in('new_def', :with => "A better greeting than Hello")
+    click_on("Update!")
+    expect(page).to have_content('A better greeting than Hello')
     expect(page).to have_content('Hello in Spanish')
   end
 end
