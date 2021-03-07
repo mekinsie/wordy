@@ -1,0 +1,15 @@
+<h2>Edit which word?</h2>
+
+<form action="/" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <ol>
+    <% @words.each do |word| %>
+      <label for="edit_def_id"><%= word.word %></label>
+      <input type="radio" name="edited_word_id" value="<%= word.id %>"><br>
+    <% end %>
+  </ol>
+  <input type="text" name="new_word" placeholder="new word" required>
+  <button type="submit" class="btn">Update!</button>
+</form><br>
+
+<a href="/" class="btn">Home</a><br><br>
