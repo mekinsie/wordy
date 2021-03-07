@@ -5,13 +5,14 @@ require 'pry'
 
 describe '#Definition' do
 before(:each) do
-  Word.clear()
-  Definition.clear()
   @word1 = Word.new("Hello", nil)
   @word1.save
   @word2 = Word.new("Goodbye", nil)
   @word2.save
-
+end
+after(:each) do
+  Word.clear()
+  Definition.clear()
 end
 
   describe('.all') do
@@ -99,5 +100,4 @@ end
       expect(def1.word).to(eq(@word1))
     end
   end
-
 end
