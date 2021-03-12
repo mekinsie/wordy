@@ -1,17 +1,10 @@
-<h2>Edit which word?</h2>
+<h2>Edit word:</h2>
 
-<form action="/" method="post">
+
+<form action="/words/<%= @word.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <% if @words.any? %>
-    <% @words.each do |word| %>
-      <label for="edited_word_id"><%= word.word %></label>
-      <input type="radio" name="edited_word_id" id="<%= word.word %>" value="<%= word.id %>"><br>
-    <% end %>
-  <% else %>
-    <p>There are currently no words to edit.</p>
-  <% end %><br>
-  <input type="text" name="new_word" placeholder="new word" required>
+  <input type="text" name="new_word" placeholder="New word" required>
   <button type="submit" class="btn">Update!</button>
 </form><br>
 
-<a href="/" class="btn">Back</a><br><br>
+<a href="/words/<%= @word.id %>" class="btn">Back</a><br>

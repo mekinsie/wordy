@@ -1,5 +1,5 @@
 require 'rspec'
-require 'wordy'
+require 'word'
 require 'definition'
 require 'pry'
 

@@ -1,4 +1,4 @@
-<form action="/<%= @word.id %>" method="post">
+<form action="/words/<%= @word.id %>/definitions" method="post">
   <div class="form-group">
     <label for="new_def">Definition:</label>
     <input type="hidden" name="word_id" id="word_id" value="<%= @word.id %>">
@@ -7,4 +7,4 @@
   </div>
 </form>
 
-<a href="/<%= @word.id %>" class="btn">Back</a><br>
+<a href="/words/<%= @word.id %>" class="btn">Back</a><br>

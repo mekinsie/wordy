@@ -1,26 +1,12 @@
 <h1>Welcome to Wordy!</h1>
 <h2>You can create a word and give it your own definition.</h2>
-<a href="/new">Add a new word</a><br>
 
-<h3>Your Words:</h3>
 
-<% if @word_list.any? %>
-  <ul>
-    <% @word_list.each do |word| %>
-      <li><a href="/<%= word.id %>"><%= word.word %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no words to display.</p>
-<% end %><br>
-  
-<div class="container">
-  <a href="/edit_word">Edit a word</a><br>
-  <a href="/delete_word">Delete a word</a><br><br><br>
-</div>
-
-<h5>Note:</h5>
+<h5>Navigation:</h5>
 <ul>
-  <li> Click edit, delete or add a word on this page to change, delete or add a word.</li>
+  <li> Click on "Words" to see a list of all your created words.</li>
+    <li>You can change, add, or delete any words on the words page.</li>
   <li>To change, add or delete a definition, click on the word and the corresponding buttons will be on that page.</li>
 </ul><br><br>
+
+<a href="/words"><h2>Words</h2></a>

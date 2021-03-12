@@ -1,15 +1,9 @@
-<h2>Edit which definition?</h2>
+<h2>Edit definition:</h2>
 
-<form action="/<%= @word.id %>" method="post">
+<form action="/words/<%= @word.id %>/definitions/<%= @definition.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <ol>
-    <% @word.definitions.each do |def_obj| %>
-      <label for="edited_def_id"><%= def_obj.definition%></label>
-      <input type="radio" name="edited_def_id" id="<%= def_obj.definition%>" value="<%= def_obj.id %>"><br>
-    <% end %>
-  </ol>
   <input type="text" name="new_def" placeholder="new definition" required>
   <button type="submit" class="btn">Update!</button>
 </form><br>
 
-<a href="/<%= @word.id %>" class="btn">Back</a><br>
+<a href="/words/<%= @word.id %>/definitions/<%= @definition.id %>" class="btn">Back</a><br>
