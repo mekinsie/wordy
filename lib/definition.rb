@@ -12,15 +12,15 @@ class Definition
   def self.all
     @@definitions.values
   end
-  
+
   def save
     @@definitions[self.id] = Definition.new(self.definition, self.word_id, self.id)
   end
-  
+
   def ==(def_compare)
     self.definition() == def_compare.definition()
   end
-  
+
   def self.find(id)
     @@definitions[id]
   end
@@ -33,7 +33,7 @@ class Definition
   def update_def(new_def)
     @definition = new_def
   end
-  
+
   def delete
     @@definitions.delete(self.id)
   end

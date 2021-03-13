@@ -54,7 +54,8 @@ get('/words/:id')do
 end
 
 get('/words/:id/definitions') do
-  redirect('/words/:id')
+  @word = Word.find(params[:id].to_i)
+  erb(:word)
 end
 
 get('/words/:id/definitions/:definition_id') do

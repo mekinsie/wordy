@@ -4,10 +4,9 @@ require 'definition'
 require 'pry'
 
 describe '#Word' do
-
-before(:each) do
-  Word.clear()
-end
+  before(:each) do
+    Word.clear()
+  end
 
   describe('.all') do
     it("should return an empty array when there are no words") do
@@ -61,7 +60,6 @@ end
     end
   end
 
-
   describe("#delete") do
     it("should delete a word by its id") do
     word1 = Word.new("Hello", nil)
@@ -72,7 +70,7 @@ end
     expect(Word.all).to(eq([word2]))
     end
   end
-  
+
   describe('#definitions') do
     it("returns a word's definitions") do
       Definition.clear

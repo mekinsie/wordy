@@ -51,7 +51,6 @@ describe('edit a word path', {:type => :feature}) do
   end
 end
 
-
 describe('add a definition path', {:type => :feature}) do
   it('adds a definition to an existing word') do
     visit('/words/2')

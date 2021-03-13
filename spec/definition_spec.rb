@@ -31,7 +31,6 @@ end
     end
   end
 
-
   describe('#==') do
     it("is the same definition if it has the same attributes as another definition") do
       def1 = Definition.new("A greeting", @word1.id, nil)
@@ -39,8 +38,7 @@ end
       expect(def1).to(eq(def2))
     end
   end
-  
-  
+
   describe('.clear') do
     it("clears all definitions from the database") do
       def1 = Definition.new("A greeting", @word1.id, nil)
@@ -51,7 +49,6 @@ end
       expect(Definition.all).to(eq([]))
     end
   end
-
 
   describe('.find') do
     it('should find a definition based on its id') do

@@ -1,6 +1,5 @@
 <h2>Edit word:</h2>
 
-
 <form action="/words/<%= @word.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <input type="text" name="new_word" placeholder="New word" required>
