@@ -64,7 +64,7 @@ get('/words/:id/definitions/:definition_id') do
   erb(:definition)
 end
 
-get('/words/:id/add_def/') do
+get('/words/:id/add_def') do
   @word = Word.find(params[:id].to_i)
   erb(:new_definition)
 end
